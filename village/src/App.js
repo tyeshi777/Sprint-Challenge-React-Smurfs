@@ -34,8 +34,8 @@ class App extends Component {
       });
   }
 
-  deleteSmurf = (ev, smurfId) => {
-    ev.preventDefault();
+  deleteSmurf = (e, smurfId) => {
+    e.preventDefault();
     axios
       .delete(`${sourceUrl}/smurfs/${smurfId}`)
       .then(res =>
@@ -52,12 +52,19 @@ class App extends Component {
         <nav>
           <h1 className="header">Smurfs Village!!</h1>
           <div className="navLinks">
-            <NavLink onClick={() => this.getSmurfs()} to="/">
+            <NavLink
+              onClick={() => this.getSmurfs()}
+              className="nav-link"
+              to="/"
+            >
               Smurfs List!
             </NavLink>
-            <NavLink to="/smurf-form">Add Smurf</NavLink>
+            <NavLink to="/smurf-form" className="nav-link">
+              Create Smurf
+            </NavLink>
           </div>
         </nav>
+
         <Route
           path="/"
           render={props => (
@@ -70,6 +77,7 @@ class App extends Component {
             />
           )}
         />
+
         <Route
           exact
           path="/smurf-form"

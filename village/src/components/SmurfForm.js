@@ -24,8 +24,8 @@ class SmurfForm extends Component {
           height: ""
         });
 
-        // this.props.getSmurfs();
-        this.props.history.push("/");
+        this.props.getSmurfs();
+        this.props.history.push("/smurfs");
       })
       .catch(err => console.log(err));
   };

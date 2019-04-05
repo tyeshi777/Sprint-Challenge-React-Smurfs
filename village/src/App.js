@@ -51,10 +51,12 @@ class App extends Component {
       <div className="App">
         <nav>
           <h1 className="header">Smurfs Village!!</h1>
-          <NavLink onClick={() => this.getSmurfs()} to="/">
-            Smurfs List!
-          </NavLink>
-          <NavLink to="/smurf-form">Add Smurf</NavLink>
+          <div className="navLinks">
+            <NavLink onClick={() => this.getSmurfs()} to="/">
+              Smurfs List!
+            </NavLink>
+            <NavLink to="/smurf-form">Add Smurf</NavLink>
+          </div>
         </nav>
         <Route
           path="/"
